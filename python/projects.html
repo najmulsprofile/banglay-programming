@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <!-- ── Google Analytics ─────────────────────────────── -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FFFEQVW4NK"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-FFFEQVW4NK');
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amazing Python Projects — Banglay Python</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <style>
+    /* ── Reset & tokens ─────────────────────────────── */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --blue:        #0066CC;
+      --blue-light:  #F0F9FF;
+      --accent:      #E52E71;
+      --accent-light:#FFF0F5;
+      --text:        #1F2937;
+      --text-muted:  #6B7280;
+      --border:      #E5E7EB;
+      --bg:          #F5F7FA;
+      --white:       #ffffff;
+      --radius-lg:   20px;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 28px 20px 48px;
+    }
+
+    /* ── Top bar ─────────────────────────────────────── */
+    .topbar {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .btn-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 9px 20px;
+      border-radius: 40px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text);
+      text-decoration: none;
+      transition: all 0.2s ease;
+      flex-shrink: 0;
+    }
+
+    .btn-back:hover {
+      border-color: var(--blue);
+      color: var(--blue);
+      background: var(--blue-light);
+    }
+
+    .page-title {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+    }
+
+    /* ── Intro note ───────────────────────────────────── */
+    .intro-note {
+      background: var(--accent-light);
+      border: 1px solid #FBCFE8;
+      border-radius: 14px;
+      padding: 14px 18px;
+      font-size: 13.5px;
+      color: var(--text-muted);
+      margin-bottom: 28px;
+    }
+
+    /* ── Project grid ─────────────────────────────────── */
+    .project-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .project-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 24px 22px;
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      text-decoration: none;
+      color: var(--text);
+      cursor: pointer;
+      transition: all .25s ease;
+    }
+    .project-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.09);
+      border-color: var(--accent);
+    }
+    
+
+    .project-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: var(--accent-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+
+    .project-info { flex: 1; min-width: 0; }
+
+    .project-title {
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .project-desc {
+      font-size: 12.5px;
+      color: var(--text-muted);
+      line-height: 1.5;
+      margin-bottom: 8px;
+    }
+
+    .project-badges { display: flex; gap: 6px; flex-wrap: wrap; }
+
+    .badge-level {
+      font-size: 10.5px;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 30px;
+      background: var(--blue-light);
+      color: var(--blue);
+    }
+
+    .badge-soon {
+      font-size: 10.5px;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 30px;
+      background: #F3F4F6;
+      color: var(--text-muted);
+    }
+
+    @media (max-width: 600px) {
+      .project-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <div class="topbar">
+    <a class="btn-back" href="../index.html">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+           stroke="currentColor" stroke-width="2.2" stroke-linecap="round"
+           stroke-linejoin="round" aria-hidden="true">
+        <polyline points="15 18 9 12 15 6"/>
+      </svg>
+      হোম
+    </a>
+    <h1 class="page-title">🚀 Amazing Python Projects</h1>
+  </div>
+
+  <p class="intro-note">
+    নিচের প্রতিটা প্রজেক্টেই সম্পূর্ণ কোড, বাংলা কমেন্ট, ও ধাপে ধাপে ব্যাখ্যা আছে। কার্ডে ক্লিক করে দেখো!
+  </p>
+
+  <main class="project-grid" aria-label="প্রজেক্ট তালিকা">
+
+    <a class="project-card" href="project.html?id=1">
+      <div class="project-icon">🎯</div>
+      <div class="project-info">
+        <div class="project-title">Number Guessing Game</div>
+        <div class="project-desc">র‍্যান্ডম সংখ্যা জেনারেট করে ইউজারকে গেস করতে বলা — লুপ ও কন্ডিশনাল প্র্যাকটিস।</div>
+        <div class="project-badges"><span class="badge-level">বিগিনার</span></div>
+      </div>
+    </a>
+
+    <a class="project-card" href="project.html?id=2">
+      <div class="project-icon">🧮</div>
+      <div class="project-info">
+        <div class="project-title">Calculator</div>
+        <div class="project-desc">Terminal ও GUI দুই ভার্সন — ফাংশন ও এরর হ্যান্ডলিং প্র্যাকটিসের জন্য দারুণ।</div>
+        <div class="project-badges"><span class="badge-level">বিগিনার</span></div>
+      </div>
+    </a>
+
+    <a class="project-card" href="project.html?id=3">
+      <div class="project-icon">✅</div>
+      <div class="project-info">
+        <div class="project-title">To-Do List App</div>
+        <div class="project-desc">টাস্ক যোগ, সম্পন্ন চিহ্নিত ও ডিলিট — Terminal ও GUI দুই ভার্সনে।</div>
+        <div class="project-badges"><span class="badge-level">বিগিনার</span></div>
+      </div>
+    </a>
+
+    <a class="project-card" href="project.html?id=4">
+      <div class="project-icon">🔐</div>
+      <div class="project-info">
+        <div class="project-title">Password Generator</div>
+        <div class="project-desc">র‍্যান্ডম ও সিকিউর পাসওয়ার্ড তৈরি — string ও random মডিউল ব্যবহার করে।</div>
+        <div class="project-badges"><span class="badge-level">বিগিনার</span></div>
+      </div>
+    </a>
+
+    <a class="project-card" href="project.html?id=5">
+      <div class="project-icon">⭕</div>
+      <div class="project-info">
+        <div class="project-title">Tic-Tac-Toe Game</div>
+        <div class="project-desc">দুই খেলোয়াড়ের বোর্ড গেম — Terminal ও ক্লিকযোগ্য GUI ভার্সন।</div>
+        <div class="project-badges"><span class="badge-level">ইন্টারমিডিয়েট</span></div>
+      </div>
+    </a>
+
+    <a class="project-card" href="project.html?id=6">
+      <div class="project-icon">💰</div>
+      <div class="project-info">
+        <div class="project-title">Expense Tracker</div>
+        <div class="project-desc">দৈনিক খরচ লগ করা, CSV ফাইলে সেভ, ক্যাটাগরি অনুযায়ী সামারি।</div>
+        <div class="project-badges"><span class="badge-level">ইন্টারমিডিয়েট</span></div>
+      </div>
+    </a>
+
+    <a class="project-card" href="project.html?id=7">
+      <div class="project-icon">❓</div>
+      <div class="project-info">
+        <div class="project-title">Quiz Application</div>
+        <div class="project-desc">JSON থেকে প্রশ্ন লোড করে স্কোর ট্র্যাক করা — ফাইল I/O প্র্যাকটিস।</div>
+        <div class="project-badges"><span class="badge-level">ইন্টারমিডিয়েট</span></div>
+      </div>
+    </a>
+
+    <a class="project-card" href="project.html?id=8">
+      <div class="project-icon">🕸️</div>
+      <div class="project-info">
+        <div class="project-title">Web Scraper</div>
+        <div class="project-desc">requests ও BeautifulSoup দিয়ে ওয়েবসাইট থেকে ডাটা সংগ্রহ করা।</div>
+        <div class="project-badges"><span class="badge-level">ইন্টারমিডিয়েট</span></div>
+      </div>
+    </a>
+
+    <a class="project-card" href="project.html?id=9">
+      <div class="project-icon">🌦️</div>
+      <div class="project-info">
+        <div class="project-title">Weather App</div>
+        <div class="project-desc">OpenWeatherMap API কল করে শহরের বর্তমান আবহাওয়া দেখানো।</div>
+        <div class="project-badges"><span class="badge-level">ইন্টারমিডিয়েট</span></div>
+      </div>
+    </a>
+
+    <a class="project-card" href="project.html?id=10">
+      <div class="project-icon">🤖</div>
+      <div class="project-info">
+        <div class="project-title">Simple Chatbot</div>
+        <div class="project-desc">Keyword-matching চ্যাটবট — string ও লজিক প্র্যাকটিস।</div>
+        <div class="project-badges"><span class="badge-level">অ্যাডভান্সড</span></div>
+      </div>
+    </a>
+
+    <a class="project-card" href="project.html?id=11">
+      <div class="project-icon">🔗</div>
+      <div class="project-info">
+        <div class="project-title">URL Shortener</div>
+        <div class="project-desc">লম্বা URL-কে ছোট কোডে ম্যাপ করে সেভ ও রিডাইরেক্ট করা — Flask দিয়ে।</div>
+        <div class="project-badges"><span class="badge-level">অ্যাডভান্সড</span></div>
+      </div>
+    </a>
+
+    <a class="project-card" href="project.html?id=12">
+      <div class="project-icon">🐍</div>
+      <div class="project-info">
+        <div class="project-title">Snake Game</div>
+        <div class="project-desc">pygame দিয়ে ক্লাসিক Snake গেম — animation, collision detection শেখার জন্য দারুণ।</div>
+        <div class="project-badges"><span class="badge-level">অ্যাডভান্সড</span></div>
+      </div>
+    </a>
+
+  </main>
+
+</div>
+</body>
+</html>

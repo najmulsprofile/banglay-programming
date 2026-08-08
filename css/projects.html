@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <!-- ── Google Analytics ─────────────────────────────── -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FFFEQVW4NK"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-FFFEQVW4NK');
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amazing CSS Projects — Banglay CSS</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --blue:        #0066CC;
+      --blue-light:  #F0F9FF;
+      --accent:      #E52E71;
+      --accent-light:#FFF0F5;
+      --text:        #1F2937;
+      --text-muted:  #6B7280;
+      --border:      #E5E7EB;
+      --bg:          #F5F7FA;
+      --white:       #ffffff;
+      --radius-lg:   20px;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 28px 20px 48px;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .btn-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 9px 20px;
+      border-radius: 40px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text);
+      text-decoration: none;
+      transition: all 0.2s ease;
+      flex-shrink: 0;
+    }
+
+    .btn-back:hover {
+      border-color: var(--blue);
+      color: var(--blue);
+      background: var(--blue-light);
+    }
+
+    .page-title {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+    }
+
+    .intro-note {
+      background: var(--accent-light);
+      border: 1px solid #FBCFE8;
+      border-radius: 14px;
+      padding: 14px 18px;
+      font-size: 13.5px;
+      color: var(--text-muted);
+      margin-bottom: 28px;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .project-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 24px 22px;
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      text-decoration: none;
+      color: var(--text);
+      cursor: pointer;
+      transition: all .25s ease;
+    }
+    .project-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.09);
+      border-color: var(--accent);
+    }
+
+    .project-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: var(--accent-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+
+    .project-info { flex: 1; min-width: 0; }
+
+    .project-title { font-size: 15px; font-weight: 600; margin-bottom: 4px; }
+    .project-desc { font-size: 12.5px; color: var(--text-muted); line-height: 1.5; margin-bottom: 8px; }
+    .project-badges { display: flex; gap: 6px; flex-wrap: wrap; }
+
+    .badge-level {
+      font-size: 10.5px;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 30px;
+      background: var(--blue-light);
+      color: var(--blue);
+    }
+
+    @media (max-width: 600px) {
+      .project-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <div class="topbar">
+    <a class="btn-back" href="modules.html">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+           stroke="currentColor" stroke-width="2.2" stroke-linecap="round"
+           stroke-linejoin="round" aria-hidden="true">
+        <polyline points="15 18 9 12 15 6"/>
+      </svg>
+      মডিউল
+    </a>
+    <h1 class="page-title">🚀 Amazing CSS Projects</h1>
+  </div>
+
+  <p class="intro-note">
+    নিচের প্রতিটা প্রজেক্টেই সম্পূর্ণ কোড, বাংলা কমেন্ট, লাইভ প্রিভিউ ও ধাপে ধাপে ব্যাখ্যা আছে। কার্ডে ক্লিক করে দেখো!
+  </p>
+
+  <main class="project-grid" id="projectGrid" aria-label="প্রজেক্ট তালিকা">
+    <!-- Populated below -->
+  </main>
+
+</div>
+
+<script src="projects-data.js"></script>
+<script>
+  const PROJECT_DESCRIPTIONS = {
+    1:  "রঙ, বক্স মডেল ও ছায়া দিয়ে একটা প্রফেশনাল প্রোফাইল কার্ড সাজানো।",
+    2:  "হোভার করলে উপরে উঠে আসা ও ছায়া বদলানো একটা প্রাইসিং কার্ড।",
+    3:  "Flexbox দিয়ে লোগো ও মেনু লিংক সাজিয়ে একটা রেসপনসিভ নেভবার।",
+    4:  "একাধিক ধরনের (primary/secondary/outline) কাস্টম বাটন স্টাইল।",
+    5:  "CSS Grid দিয়ে auto-fit/minmax ব্যবহার করে সম্পূর্ণ রেসপনসিভ ফটো গ্যালারি।",
+    6:  "গ্রেডিয়েন্ট ব্যাকগ্রাউন্ড ও Flexbox সেন্টারিং দিয়ে একটা ল্যান্ডিং পেজ হিরো সেকশন।",
+    7:  "শুধু CSS দিয়ে (JavaScript ছাড়া) ক্লিকে-খোলা অ্যাকর্ডিয়ন/ড্রপডাউন।",
+    8:  "মিডিয়া কোয়েরি দিয়ে মোবাইলে ১ কলাম, ডেস্কটপে ৩ কলামের কার্ড গ্রিড।",
+    9:  "@keyframes দিয়ে ঘোরা লোডিং স্পিনার অ্যানিমেশন।",
+    10: "নেভবার, হিরো, গ্রিড, ফর্ম সব মিলিয়ে একটা সম্পূর্ণ রেসপনসিভ পোর্টফোলিও পেজ।",
+  };
+
+  (function renderGrid() {
+    const grid = document.getElementById('projectGrid');
+
+    CSS_PROJECTS.forEach(proj => {
+      const card = document.createElement('a');
+      card.className = 'project-card';
+      card.href = `project.html?id=${proj.id}`;
+
+      card.innerHTML = `
+        <div class="project-icon">${proj.icon}</div>
+        <div class="project-info">
+          <div class="project-title">${proj.title}</div>
+          <div class="project-desc">${PROJECT_DESCRIPTIONS[proj.id] || ''}</div>
+          <div class="project-badges"><span class="badge-level">${proj.level}</span></div>
+        </div>
+      `;
+
+      grid.appendChild(card);
+    });
+  })();
+</script>
+</body>
+</html>

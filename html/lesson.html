@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <!-- ── Google Analytics ─────────────────────────────── -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FFFEQVW4NK"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-FFFEQVW4NK');
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>পাঠ — Banglay HTML</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    /* ── Reset & tokens ─────────────────────────────── */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --blue:        #0066CC;
+      --blue-dark:   #0052a3;
+      --blue-light:  #F0F9FF;
+      --text:        #1F2937;
+      --text-muted:  #6B7280;
+      --border:      #E5E7EB;
+      --bg:          #F5F7FA;
+      --white:       #ffffff;
+      --code-bg:     #1E1E1E;
+      --radius-lg:   20px;
+      --radius-xl:   24px;
+      --shadow-sm:   0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 24px 20px 56px;
+    }
+
+    /* ── Top bar ─────────────────────────────────────── */
+    .topbar {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 28px;
+      flex-wrap: wrap;
+    }
+
+    .btn-nav {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 9px 18px;
+      border-radius: 40px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text);
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .btn-nav:hover {
+      border-color: var(--blue);
+      color: var(--blue);
+      background: var(--blue-light);
+    }
+
+    .btn-nav:disabled {
+      opacity: 0.38;
+      cursor: not-allowed;
+    }
+
+    .btn-nav:disabled:hover {
+      border-color: var(--border);
+      color: var(--text);
+      background: var(--white);
+    }
+
+    .topbar-title {
+      font-size: 16px;
+      font-weight: 600;
+      margin-left: 4px;
+      flex: 1;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    /* ── Two-column layout ───────────────────────────── */
+    .layout {
+      display: flex;
+      gap: 24px;
+      align-items: flex-start;
+    }
+
+    /* ── Sidebar ─────────────────────────────────────── */
+    .sidebar {
+      width: 260px;
+      flex-shrink: 0;
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      padding: 20px 16px;
+      position: sticky;
+      top: 24px;
+      max-height: calc(100vh - 48px);
+      overflow-y: auto;
+    }
+
+    .sidebar-heading {
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+      padding-left: 4px;
+    }
+
+    .section-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .section-item {
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .section-link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 12px;
+      border-radius: 12px;
+      font-size: 13.5px;
+      color: var(--text-muted);
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.18s ease;
+      border: 1px solid transparent;
+    }
+
+    .section-link:hover {
+      background: var(--blue-light);
+      color: var(--blue);
+    }
+
+    .section-link.active {
+      background: var(--blue-light);
+      color: var(--blue);
+      font-weight: 600;
+      border-color: rgba(0,102,204,0.2);
+    }
+
+    .section-id-badge {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      background: var(--border);
+      color: var(--text-muted);
+      padding: 2px 7px;
+      border-radius: 6px;
+      flex-shrink: 0;
+    }
+
+    .section-link.active .section-id-badge {
+      background: rgba(0,102,204,0.15);
+      color: var(--blue);
+    }
+
+    /* ── Main content area ───────────────────────────── */
+    .main-panel {
+      flex: 1;
+      min-width: 0;
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      padding: 32px 36px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    /* ── Content typography ──────────────────────────── */
+    .content-area h2 {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--blue);
+      margin-bottom: 20px;
+    }
+
+    .content-area h3 {
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--text);
+      margin: 26px 0 10px;
+    }
+
+    .content-area h4 {
+      font-size: 15px;
+      font-weight: 600;
+      margin: 18px 0 8px;
+    }
+
+    .content-area p {
+      font-size: 14.5px;
+      line-height: 1.7;
+      color: #374151;
+      margin-bottom: 10px;
+    }
+
+    .content-area ul,
+    .content-area ol {
+      margin: 10px 0 14px 22px;
+      color: #374151;
+    }
+
+    .content-area li {
+      font-size: 14.5px;
+      line-height: 1.7;
+      margin-bottom: 5px;
+    }
+
+    /* Inline <code> snippets inside prose text — subtle dark pill */
+    .content-area code {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12.5px;
+      background: #2A2D2E;
+      color: #D4D4D4;
+      padding: 2px 7px;
+      border-radius: 5px;
+    }
+
+    /* ── Table styling (used for reference tables) ───── */
+    .table-wrapper { overflow-x: auto; margin: 16px 0; }
+    .table-wrapper table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13.5px;
+    }
+    .table-wrapper th, .table-wrapper td {
+      text-align: left;
+      padding: 10px 14px;
+      border: 1px solid var(--border);
+    }
+    .table-wrapper th {
+      background: var(--blue-light);
+      color: var(--blue-dark);
+      font-weight: 600;
+    }
+    .table-wrapper td { color: #374151; }
+    .table-wrapper td code {
+      background: #EEF2F6;
+      color: var(--blue-dark);
+      padding: 1px 6px;
+      border-radius: 4px;
+      font-size: 12px;
+    }
+
+    /* ══════════════════════════════════════════════════════════════
+       VS CODE PANEL — সোর্স কোড দেখানোর জন্য
+    ══════════════════════════════════════════════════════════════ */
+    .vscode-panel {
+      background: #1E1E1E;
+      border-radius: 10px;
+      overflow: hidden;
+      margin: 22px 0;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.45);
+    }
+
+    .vscode-tabs {
+      display: flex;
+      align-items: stretch;
+      background: #2D2D2D;
+      height: 35px;
+      border-bottom: 1px solid #252526;
+    }
+
+    .vscode-tab {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 0 16px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      color: #CCC;
+      background: #1E1E1E;
+      border-right: 1px solid #252526;
+      border-top: 1px solid #0A66C2;
+      user-select: none;
+      white-space: nowrap;
+    }
+
+    .vscode-tab-dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: #858585;
+      flex-shrink: 0;
+    }
+
+    .code-wrap { padding: 16px 20px; overflow-x: auto; }
+    .code-block {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12.5px;
+      line-height: 1.7;
+      color: #D4D4D4;
+      white-space: pre;
+      tab-size: 4; -moz-tab-size: 4;
+      margin: 0;
+      background: none;
+    }
+    .code-block code { background: none !important; padding: 0; font-size: inherit; color: inherit; }
+
+    /* HTML syntax-highlight colour roles (VS Code "Dark+" inspired) */
+    .code-block .cmt { color: #6A9955; font-style: italic; }  /* কমেন্ট */
+    .code-block .kw  { color: #569CD6; }                       /* ট্যাগ ব্র্যাকেট ও নাম */
+    .code-block .str { color: #CE9178; }                       /* অ্যাট্রিবিউটের মান (স্ট্রিং) */
+    .code-block .fn  { color: #DCDCAA; }                       /* অ্যাট্রিবিউটের নাম */
+
+    /* ══════════════════════════════════════════════════════════════
+       BROWSER PREVIEW PANEL
+       HTML কোর্সে "output" মানে টার্মিনাল না — ব্রাউজারে রেন্ডার হওয়া
+       ফলাফল। তাই vscode-panel এর বদলে এই ব্রাউজার-উইন্ডো মকআপ।
+    ══════════════════════════════════════════════════════════════ */
+    .browser-panel {
+      border-radius: 10px;
+      overflow: hidden;
+      margin: 18px 0 24px;
+      border: 1px solid var(--border);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+
+    .browser-topbar {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: #E5E7EB;
+      height: 38px;
+      padding: 0 14px;
+    }
+
+    .browser-dots { display: flex; gap: 6px; flex-shrink: 0; }
+    .browser-dot { width: 11px; height: 11px; border-radius: 50%; }
+    .browser-dot.red    { background: #FF5F57; }
+    .browser-dot.yellow { background: #FFBD2E; }
+    .browser-dot.green  { background: #28C840; }
+
+    .browser-url {
+      flex: 1;
+      background: var(--white);
+      border-radius: 6px;
+      padding: 5px 12px;
+      font-size: 11.5px;
+      color: var(--text-muted);
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .browser-content {
+      background: var(--white);
+      padding: 20px 24px;
+      font-family: 'Inter', sans-serif;
+      color: #111827;
+      min-height: 50px;
+    }
+
+    /* ── Key Takeaway box ─────────────────────────────── */
+    .takeaway-box {
+      background: #F0F9FF;
+      border: 1px solid #BAE0FD;
+      border-radius: 14px;
+      padding: 18px 22px;
+      margin: 20px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .takeaway-item {
+      font-size: 14px;
+      color: #1F2937;
+      line-height: 1.6;
+    }
+
+    .takeaway-item code {
+      background: #DBEAFE;
+      color: #1E40AF;
+      padding: 1px 6px;
+      border-radius: 4px;
+      font-size: 12.5px;
+    }
+
+    /* ── Next Module button ───────────────────────────── */
+    .btn-next-module {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 24px;
+      padding: 11px 28px;
+      background: #0A66C2;
+      color: #ffffff;
+      border-radius: 50px;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: 0 3px 14px rgba(10, 102, 194, 0.35);
+      transition: background .2s ease, transform .2s ease;
+    }
+
+    .btn-next-module:hover {
+      background: #004182;
+      transform: translateY(-2px);
+    }
+
+    .coming-soon { text-align: center; padding: 60px 20px; }
+    .coming-soon-icon { font-size: 48px; margin-bottom: 16px; }
+    .coming-soon h2 { font-size: 22px; color: #D97706; margin-bottom: 10px; }
+    .coming-soon p { color: var(--text-muted); font-size: 15px; line-height: 1.7; }
+
+    /* ── Bottom navigation (Prev / Next) ─────────────── */
+    .bottom-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 36px;
+      padding-top: 22px;
+      border-top: 1px solid var(--border);
+      gap: 12px;
+    }
+
+    .section-indicator {
+      font-size: 13px;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    /* ── Responsive ─────────────────────────────────── */
+    @media (max-width: 720px) {
+      .layout { flex-direction: column; }
+      .sidebar { width: 100%; position: static; max-height: none; }
+      .main-panel { padding: 22px 18px; }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- ── Top bar ─────────────────────────────────────── -->
+  <div class="topbar">
+    <!-- Back to HTML module list -->
+    <a class="btn-nav" href="modules.html" id="btnModules" aria-label="মডিউল তালিকায় ফিরে যান">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none"
+           stroke="currentColor" stroke-width="2.4" stroke-linecap="round"
+           stroke-linejoin="round" aria-hidden="true">
+        <polyline points="15 18 9 12 15 6"/>
+      </svg>
+      সব মডিউল
+    </a>
+
+    <!-- Current section title (updated by JS) -->
+    <span class="topbar-title" id="topbarTitle">লোড হচ্ছে…</span>
+  </div>
+
+  <!-- ── Sidebar + Content layout ────────────────────── -->
+  <div class="layout">
+
+    <!-- Left: section list -->
+    <aside class="sidebar" aria-label="পাঠ তালিকা">
+      <div class="sidebar-heading">বিষয়সমূহ</div>
+      <ul class="section-list" id="sectionList" role="list">
+        <!-- Populated by JS -->
+      </ul>
+    </aside>
+
+    <!-- Right: lesson content -->
+    <main class="main-panel">
+      <div class="content-area" id="contentArea">
+        <!-- Populated by JS -->
+      </div>
+
+      <!-- Prev / Next navigation -->
+      <nav class="bottom-nav" aria-label="পাঠ নেভিগেশন">
+        <button class="btn-nav" id="btnPrev" onclick="navigate(-1)" aria-label="আগের অংশ">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="2.4" stroke-linecap="round"
+               stroke-linejoin="round" aria-hidden="true">
+            <polyline points="15 18 9 12 15 6"/>
+          </svg>
+          আগের অংশ
+        </button>
+
+        <span class="section-indicator" id="sectionIndicator"></span>
+
+        <button class="btn-nav" id="btnNext" onclick="navigate(1)" aria-label="পরের অংশ">
+          পরের অংশ
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="2.4" stroke-linecap="round"
+               stroke-linejoin="round" aria-hidden="true">
+            <polyline points="9 18 15 12 9 6"/>
+          </svg>
+        </button>
+      </nav>
+    </main>
+
+  </div>
+</div>
+
+<!-- HTML কোর্সের ডাটা (HTML_MODULES / HTML_LESSONS) -->
+<script src="main.js"></script>
+
+<script>
+  /* ──────────────────────────────────────────────────────
+     LESSON PAGE CONTROLLER — HTML কোর্স
+     Reads ?module=N&section=X.Y from the URL,
+     renders the sidebar list and the active section content,
+     and wires up Prev / Next buttons.
+     (main.js এর lesson.html controller-এর সাথে হুবহু একই লজিক,
+      শুধু HTML_LESSONS ডাটাসোর্স ব্যবহার করছে।)
+  ────────────────────────────────────────────────────── */
+
+  let activeModuleId   = null;
+  let activeSections   = [];
+  let activeSectionIdx = 0;
+
+  function getParam(name) {
+    return new URLSearchParams(window.location.search).get(name);
+  }
+
+  function init() {
+    const moduleParam  = parseInt(getParam('module'), 10) || 1;
+    const sectionParam = getParam('section') || null;
+
+    activeModuleId = moduleParam;
+    activeSections = HTML_LESSONS[activeModuleId] || [];
+
+    if (activeSections.length === 0) {
+      document.getElementById('contentArea').innerHTML = `
+        <div class="coming-soon">
+          <div class="coming-soon-icon">🚧</div>
+          <h2>এই মডিউলটি শীঘ্রই আসছে</h2>
+          <p>আমরা এখনো এই মডিউলের পাঠ লিখছি। একটু পরে আবার দেখো!</p>
+        </div>
+      `;
+      document.getElementById('topbarTitle').textContent = 'শীঘ্রই আসছে';
+      document.querySelector('.bottom-nav').style.display = 'none';
+      return;
+    }
+
+    if (sectionParam) {
+      const idx = activeSections.findIndex(s => s.id === sectionParam);
+      activeSectionIdx = idx >= 0 ? idx : 0;
+    }
+
+    buildSidebar();
+    renderSection(activeSectionIdx);
+  }
+
+  function buildSidebar() {
+    const list = document.getElementById('sectionList');
+    list.innerHTML = '';
+
+    activeSections.forEach((sec, idx) => {
+      const li = document.createElement('li');
+      li.className = 'section-item';
+
+      const a = document.createElement('a');
+      a.className = 'section-link' + (idx === activeSectionIdx ? ' active' : '');
+      a.href = '#';
+      a.dataset.idx = idx;
+      a.innerHTML = `
+        <span class="section-id-badge">${sec.id}</span>
+        <span>${sec.title}</span>
+      `;
+      a.addEventListener('click', e => {
+        e.preventDefault();
+        renderSection(parseInt(e.currentTarget.dataset.idx, 10));
+      });
+
+      li.appendChild(a);
+      list.appendChild(li);
+    });
+  }
+
+  function renderSection(idx) {
+    if (idx < 0 || idx >= activeSections.length) return;
+    activeSectionIdx = idx;
+
+    const sec = activeSections[idx];
+
+    document.getElementById('contentArea').innerHTML = sec.content;
+
+    document.getElementById('topbarTitle').textContent =
+      `মডিউল ${activeModuleId} — ${sec.id} ${sec.title}`;
+
+    document.title = `${sec.id} ${sec.title} — Banglay HTML`;
+
+    document.querySelectorAll('.section-link').forEach((el, i) => {
+      el.classList.toggle('active', i === idx);
+    });
+
+    const activeLink = document.querySelector('.section-link.active');
+    if (activeLink) activeLink.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+
+    const btnPrev = document.getElementById('btnPrev');
+    const btnNext = document.getElementById('btnNext');
+    btnPrev.disabled = (idx === 0);
+    btnNext.disabled = (idx === activeSections.length - 1);
+
+    document.getElementById('sectionIndicator').textContent =
+      `${idx + 1} / ${activeSections.length}`;
+
+    const url = new URL(window.location.href);
+    url.searchParams.set('module', activeModuleId);
+    url.searchParams.set('section', sec.id);
+    history.replaceState(null, '', url.toString());
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function navigate(direction) {
+    renderSection(activeSectionIdx + direction);
+  }
+
+  // Boot
+  init();
+</script>
+</body>
+</html>

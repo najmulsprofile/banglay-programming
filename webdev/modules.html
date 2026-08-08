@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <!-- ── Google Analytics ─────────────────────────────── -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FFFEQVW4NK"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-FFFEQVW4NK');
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>মডিউল সমূহ — Banglay Web Development</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --blue:        #0066CC;
+      --blue-dark:   #0052a3;
+      --blue-light:  #F0F9FF;
+      --text:        #1F2937;
+      --text-muted:  #6B7280;
+      --border:      #E5E7EB;
+      --bg:          #F5F7FA;
+      --white:       #ffffff;
+      --radius-lg:   20px;
+      --shadow-sm:   0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 28px 20px 48px;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .btn-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 9px 20px;
+      border-radius: 40px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text);
+      text-decoration: none;
+      transition: all 0.2s ease;
+      flex-shrink: 0;
+    }
+
+    .btn-back:hover {
+      border-color: var(--blue);
+      color: var(--blue);
+      background: var(--blue-light);
+    }
+
+    .page-title {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+    }
+
+    .intro-note {
+      background: #FFF0F5;
+      border: 1px solid #FBCFE8;
+      border-radius: 14px;
+      padding: 14px 18px;
+      font-size: 13.5px;
+      color: var(--text-muted);
+      margin-bottom: 28px;
+    }
+
+    .module-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .module-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 26px 24px;
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      cursor: pointer;
+      text-decoration: none;
+      color: var(--text);
+      transition: all 0.25s ease;
+    }
+
+    .module-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.09);
+      border-color: var(--blue);
+    }
+
+    .module-card:hover .module-num {
+      background: var(--blue);
+      color: var(--white);
+    }
+
+    .module-num {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: var(--blue-light);
+      color: var(--blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 15px;
+      flex-shrink: 0;
+      transition: all 0.25s ease;
+    }
+
+    .module-info { flex: 1; min-width: 0; }
+
+    .module-icon {
+      font-size: 20px;
+      margin-bottom: 4px;
+      line-height: 1;
+    }
+
+    .module-title {
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .module-sub {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .module-card.stub {
+      opacity: 0.62;
+      cursor: default;
+    }
+
+    .module-card.stub:hover {
+      transform: none;
+      box-shadow: none;
+      border-color: var(--border);
+    }
+
+    .module-card.stub:hover .module-num {
+      background: var(--blue-light);
+      color: var(--blue);
+    }
+
+    @media (max-width: 600px) {
+      .module-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <div class="topbar">
+    <a class="btn-back" href="../index.html">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+           stroke="currentColor" stroke-width="2.2" stroke-linecap="round"
+           stroke-linejoin="round" aria-hidden="true">
+        <polyline points="15 18 9 12 15 6"/>
+      </svg>
+      হোম
+    </a>
+    <h1 class="page-title">🌐 Web Development কোর্স মডিউল সমূহ</h1>
+  </div>
+
+  <p class="intro-note">
+    HTML, CSS, JavaScript ইতিমধ্যে শিখে ফেলেছ? এই কোর্স তিনটাকে একসাথে ব্যবহার করে বাস্তব ওয়েবসাইট বানানোর প্রতিটা ধাপ — প্ল্যানিং থেকে ডিপ্লয়মেন্ট পর্যন্ত — শেখাবে।
+  </p>
+
+  <main class="module-grid" id="moduleGrid" aria-label="মডিউল তালিকা">
+    <!-- Populated by main.js data -->
+  </main>
+
+</div>
+
+<!-- Web Development কোর্সের ডাটা (WEBDEV_MODULES / WEBDEV_LESSONS) -->
+<script src="main.js"></script>
+
+<script>
+  (function renderGrid() {
+    const grid = document.getElementById('moduleGrid');
+
+    WEBDEV_MODULES.forEach(mod => {
+      const sections = WEBDEV_LESSONS[mod.id] || [];
+      const isReady  = sections.length > 0;
+      const firstSection = sections[0]?.id ?? `${mod.id}.0`;
+
+      const card = document.createElement(isReady ? 'a' : 'div');
+      card.className = 'module-card' + (isReady ? '' : ' stub');
+
+      if (isReady) {
+        card.href = `lesson.html?module=${mod.id}&section=${firstSection}`;
+        card.setAttribute('aria-label', `মডিউল ${mod.id}: ${mod.title}`);
+      } else {
+        card.setAttribute('role', 'article');
+        card.setAttribute('aria-label', `মডিউল ${mod.id}: ${mod.title} — শীঘ্রই আসছে`);
+      }
+
+      card.innerHTML = `
+        <div class="module-num">${String(mod.id).padStart(2, '0')}</div>
+        <div class="module-info">
+          <div class="module-icon">${mod.icon}</div>
+          <div class="module-title">${mod.title}</div>
+          <div class="module-sub">${isReady ? 'পড়ুন →' : 'শীঘ্রই আসছে…'}</div>
+        </div>
+      `;
+
+      grid.appendChild(card);
+    });
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <!-- ── Google Analytics ─────────────────────────────── -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FFFEQVW4NK"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-FFFEQVW4NK');
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>প্রজেক্ট — Banglay Web Development</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --blue: #0066CC; --blue-light: #F0F9FF; --accent: #E52E71; --accent-light: #FFF0F5;
+      --text: #1F2937; --text-muted: #6B7280; --border: #E5E7EB; --bg: #F5F7FA; --white: #ffffff;
+      --radius-lg: 20px;
+    }
+    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+    .container { max-width: 900px; margin: 0 auto; padding: 28px 20px 56px; }
+
+    .topbar { display: flex; align-items: center; gap: 12px; margin-bottom: 24px; }
+    .btn-back {
+      display: inline-flex; align-items: center; gap: 6px; padding: 9px 18px; border-radius: 40px;
+      background: var(--white); border: 1px solid var(--border); font-size: 14px; font-weight: 500;
+      color: var(--text); text-decoration: none; transition: all .2s ease;
+    }
+    .btn-back:hover { border-color: var(--blue); color: var(--blue); background: var(--blue-light); }
+
+    .main-panel {
+      background: var(--white); border-radius: var(--radius-lg); border: 1px solid var(--border);
+      padding: 32px 36px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    .project-badges { display:flex; gap:8px; margin-bottom: 14px; }
+    .badge-level { font-size: 11px; font-weight: 600; padding: 4px 12px; border-radius: 30px; background: var(--blue-light); color: var(--blue); }
+    h2 { font-size: 24px; font-weight: 700; color: var(--blue); margin-bottom: 6px; }
+    .subtitle { font-size: 14px; color: var(--text-muted); margin-bottom: 20px; }
+    .needs-box {
+      background: var(--accent-light); border: 1px solid #FBCFE8; border-radius: 14px;
+      padding: 16px 20px; margin-bottom: 26px; font-size: 14px; color: var(--text);
+    }
+    .needs-box strong { color: var(--accent); }
+    .needs-box ul { margin: 8px 0 0 20px; }
+    .needs-box li { margin-bottom: 4px; font-size: 13.5px; color: #374151; }
+    h3 { font-size: 17px; font-weight: 600; margin: 26px 0 10px; }
+    p { font-size: 14.5px; line-height: 1.7; color: #374151; margin-bottom: 10px; }
+
+    .vscode-panel { background: #1E1E1E; border-radius: 10px; overflow: hidden; margin: 18px 0; box-shadow: 0 4px 24px rgba(0,0,0,0.45); }
+    .vscode-tabs { display: flex; align-items: stretch; background: #2D2D2D; height: 35px; border-bottom: 1px solid #252526; }
+    .vscode-tab {
+      display: inline-flex; align-items: center; gap: 7px; padding: 0 16px;
+      font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #CCC;
+      background: #1E1E1E; border-right: 1px solid #252526; border-top: 1px solid #0A66C2;
+      user-select: none; white-space: nowrap;
+    }
+    .vscode-tab-dot { width: 7px; height: 7px; border-radius: 50%; background: #858585; flex-shrink: 0; }
+    .code-wrap { padding: 16px 20px; overflow-x: auto; }
+    .code-block {
+      font-family: 'JetBrains Mono', monospace; font-size: 12.5px; line-height: 1.7;
+      color: #D4D4D4; white-space: pre; tab-size: 4; -moz-tab-size: 4; margin: 0; background: none;
+    }
+    .code-block code { background: none !important; padding: 0; font-size: inherit; color: inherit; }
+    .code-block .cmt { color: #6A9955; font-style: italic; }
+    .code-block .kw  { color: #569CD6; }
+    .code-block .fn  { color: #DCDCAA; }
+    .code-block .str { color: #CE9178; }
+    .code-block .num { color: #B5CEA8; }
+
+    .preview-divider {
+      display: flex; align-items: center; gap: 10px; padding: 0 14px; height: 26px;
+      background: #2D2D2D; border-top: 1px solid #3C3C3C; border-bottom: 1px solid #3C3C3C;
+      font-family: 'JetBrains Mono', monospace; font-size: 10.5px; font-weight: 600;
+      letter-spacing: 0.6px; text-transform: uppercase; color: #858585; user-select: none;
+    }
+    .preview-icon { color: #6A9955; font-size: 11px; }
+    .preview-wrap { background: #ffffff; padding: 20px 24px; font-family: 'Inter', sans-serif; color: #111827; min-height: 50px; overflow-x: auto; }
+
+    .extend-box {
+      background: #F0F9FF; border: 1px solid #BAE0FD; border-radius: 14px;
+      padding: 18px 22px; margin: 24px 0 0; display: flex; flex-direction: column; gap: 8px;
+    }
+    .extend-item { font-size: 14px; color: #1F2937; line-height: 1.6; }
+    .note-box {
+      background: #FFFBEB; border: 1px solid #FDE68A; border-radius: 14px;
+      padding: 14px 18px; margin: 18px 0; font-size: 13.5px; color: #92400E;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="topbar">
+    <a class="btn-back" href="projects.html">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <polyline points="15 18 9 12 15 6"/>
+      </svg>
+      প্রজেক্ট তালিকা
+    </a>
+  </div>
+
+  <div class="main-panel" id="projectContent">
+    <!-- এখানে সিলেক্ট করা প্রজেক্টের কনটেন্ট বসবে -->
+  </div>
+</div>
+
+<script src="projects-data.js"></script>
+<script>
+  const contentArea = document.getElementById('projectContent');
+
+  function loadProject(id) {
+    const project = WEBDEV_PROJECT_CONTENT[id];
+    if (!project) {
+      window.location.href = 'projects.html';
+      return;
+    }
+    contentArea.innerHTML = project;
+    window.scrollTo(0, 0);
+  }
+
+  const params = new URLSearchParams(window.location.search);
+  const projectId = parseInt(params.get('id'));
+
+  if (projectId) {
+    loadProject(projectId);
+  } else {
+    window.location.href = 'projects.html';
+  }
+</script>
+</body>
+</html>
